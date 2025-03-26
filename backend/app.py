@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import subprocess
 import os
 import tempfile
@@ -9,6 +10,7 @@ import time
 import signal
 
 app = Flask(__name__)
+CORS(app, resources={r"/run": {"origins": "*"}})
 
 # Language configurations
 LANGUAGE_CONFIGS = {
