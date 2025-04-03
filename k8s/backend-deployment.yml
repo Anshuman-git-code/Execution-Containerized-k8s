@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: k8s-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      name: backend-pod
+      namespace: k8s-app
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: k8s-backend
+        image: anshuman04/k8s-backend:latest
+        ports:
+        - containerPort: 5000
