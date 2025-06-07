@@ -6,7 +6,9 @@ A containerized application for executing code in multiple programming languages
 
 To see a demonstration of the application in action, including code execution and security features (timeout and output limitation), please check out our demo video:
 
-![Demo Video](./assets/RecodingOf_Kubernetes%20Containerized%20Code%20Execution%20Platform_.mov)
+[Download Demo Video](https://github.com/Anshuman-git-code/Execution-Containerized-k8s/raw/main/assets/RecodingOf_Kubernetes%20Containerized%20Code%20Execution%20Platform_.mov)
+
+*Note: The video is in .mov format and is approximately 84MB in size.*
 
 ## Features
 
