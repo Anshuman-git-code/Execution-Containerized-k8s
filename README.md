@@ -4,9 +4,9 @@ A containerized application for executing code in multiple programming languages
 
 ## Demo Video
 
-To see a demonstration of the application in action, including code execution and security features (timeout and output limitation), please check out our demo video:
+To see a demonstration of the application in action, including code execution and security features (timeout and output limitation):
 
-https://github.com/Anshuman-git-code/Execution-Containerized-k8s/raw/main/assets/demo-compressed.mp4
+![Demo Video](https://github.com/user-attachments/assets/143f2e36-3a1a-4266-adf4-d5a2c6953d97)
 
 ## Features
 
