@@ -14,21 +14,14 @@ function App() {
   const handleRunCode = async () => {
     setLoading(true);
     try {
-      // Using the API endpoint that works with our nginx proxy
       const response = await axios.post("/api/run", {
         code,
         language,
-        stdin: "" // Empty string for stdin to maintain API compatibility
+        stdin: "" // Still sending empty stdin to maintain API compatibility
       });
       setOutput(response.data);
     } catch (error) {
-      console.error("Error executing code:", error);
-      setOutput({ 
-        error: "Failed to execute code", 
-        stdout: "", 
-        stderr: error.toString(),
-        status: "Error" 
-      });
+      setOutput({ error: "Failed to execute code" });
     }
     setLoading(false);
   };
@@ -51,7 +44,7 @@ function App() {
         onChange={(e) => setCode(e.target.value)}
       />
 
-      {/* Input field has been removed */}
+      {/* Removed the stdin textarea */}
 
       <button onClick={handleRunCode} disabled={loading}>
         {loading ? "Running..." : "Run Code"}

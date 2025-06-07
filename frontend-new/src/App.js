@@ -8,7 +8,7 @@ function App() {
   const [output, setOutput] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Removed Java from the languages array
+  // Only these four languages
   const languages = ["python", "javascript", "c", "cpp"];
 
   const handleRunCode = async () => {
@@ -51,7 +51,7 @@ function App() {
         onChange={(e) => setCode(e.target.value)}
       />
 
-      {/* Input field has been removed */}
+      {/* No input field */}
 
       <button onClick={handleRunCode} disabled={loading}>
         {loading ? "Running..." : "Run Code"}

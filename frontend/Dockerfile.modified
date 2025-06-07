@@ -1,0 +1,25 @@
+FROM node:18 AS build
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm install --silent
+
+COPY . .
+
+# Create a .env file with the API URL (will be replaced at runtime)
+RUN echo "REACT_APP_API_URL=http://backend:5000" > .env
+
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Add a script to replace the API URL at runtime
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+EXPOSE 80
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]

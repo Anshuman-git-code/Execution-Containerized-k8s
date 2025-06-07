@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: k8s-app
+data:
+  API_URL: "http://backend:5000"
